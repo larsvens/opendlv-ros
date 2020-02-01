@@ -1,0 +1,4 @@
+<launch>
+   <node name = "opendlv_ros_dashboard" pkg = "rqt_gui" type = "rqt_gui" output = "screen" args = "--perspective-file $(find opendlv-ros)/rqt_config/tamp_ctrl_test.perspective"/>
+   <node name = "opendlv_ros_interface" pkg = "opendlv-ros" type = "opendlv_ros.py" output = "screen" > </node>
+</launch>
