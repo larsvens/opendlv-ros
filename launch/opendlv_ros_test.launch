@@ -1,4 +1,6 @@
 <launch>
-   <node name = "opendlv_ros_dashboard" pkg = "rqt_gui" type = "rqt_gui" output = "screen" args = "--perspective-file $(find opendlv-ros)/rqt_config/tamp_ctrl_test.perspective"/>
-   <node name = "opendlv_ros_interface" pkg = "opendlv-ros" type = "opendlv_ros.py" output = "screen" > </node>
+   <node name = "opendlv_ros_ctrl_dashboard" pkg = "rqt_gui" type = "rqt_gui" output = "screen" args = "--perspective-file $(find opendlv_ros)/rqt_config/tamp_ctrl_test.perspective"/>
+   <node name = "opendlv_ros_signals_dashboard" pkg = "rqt_gui" type = "rqt_gui" output = "screen" args = "--perspective-file $(find opendlv_ros)/rqt_config/tamp_signals_test.perspective"/>
+   <node name = "cmd_translator" pkg = "opendlv_ros" type = "cmd_translator_node.py" output = "screen" > </node>
+   <node name = "opendlv_ros_interface" pkg = "opendlv_ros" type = "opendlv_ros_node.py" output = "screen" > </node>
 </launch>

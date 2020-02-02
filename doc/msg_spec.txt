@@ -1,0 +1,23 @@
+field in                  message   message type                 source/destination
+ros message               ID
+
+"SensorMsgGPS"
+lat          <--          19        GeodeticWgs84Reading         gps 
+long         <--          19        GeodeticWgs84Reading         gps 
+psi          <--          1051      GeodeticHeadingReading       gps
+psidot       <--          1031      AngularVelocityReading       gps
+ax           <--          1030      AccelerationReading          gps
+ay           <--          1030      AccelerationReading          gps
+
+"SensorMsgCAN"
+psidot       <--          1031      AngularVelocityReading       can
+vx           <--          1046      GroundSpeedReading           can
+vy           <--          1046      GroundSpeedReading           can
+ax           <--          1030      AccelerationReading          can
+ay           <--          1030      AccelerationReading          can
+delta        <--          1045      GroundSteeringReading        can
+wheel_speeds <--          ????      ???                          can  (part of private set?)
+
+"ActuationRequest"
+delta_req        -->      160       ActuationRequest (private)   can
+ax_req           -->      160       ActuationRequest (private)   can 
