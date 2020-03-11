@@ -1,0 +1,6 @@
+<launch>
+   <node name = "opendlv_ros_ctrl_dashboard" pkg = "rqt_gui" type = "rqt_gui" output = "screen" args = "--perspective-file $(find opendlv_ros)/rqt_config/tamp_ctrl_test.perspective"/>
+   <node name = "cmd_translator" pkg = "opendlv_ros" type = "cmd_translator_node.py" output = "screen" > 
+   	<remap from="opendlv_cmd" to="lars/ActuationRequest"/>
+   </node>
+</launch>
