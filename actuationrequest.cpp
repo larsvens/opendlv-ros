@@ -7,7 +7,7 @@ int main(int argc, char **argv)
 
   ros::NodeHandle n;
 
-  ros::Publisher pub = n.advertise<std_msgs::String>("/lars/ActuationRequest", 1000);
+  ros::Publisher pub = n.advertise<opendlv_ros::ActuationRequest>("/lars/ActuationRequest", 1000);
 
   // 1Hz
   ros::Rate loop_rate(1);
