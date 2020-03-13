@@ -3,7 +3,7 @@
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "acrdemo");
+  ros::init(argc, argv, "lars");
 
   ros::NodeHandle n;
 
