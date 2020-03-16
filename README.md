@@ -11,5 +11,5 @@ Build and source:
 `catkin_build`   
 `source devel/setup.bash`   
 
-Launch test nodes:   
-`roslaunch opendlv_ros opendlv_ros_test.launch`   
+Launch command publisher:   
+`roslaunch opendlv_ros ros_cmd_to_opendlv_test.launch`   
