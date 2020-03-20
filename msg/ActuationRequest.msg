@@ -1,3 +1,3 @@
 Header  header
-float32 delta_req
-float32 ax_req
+float32 acceleration
+float32 steering

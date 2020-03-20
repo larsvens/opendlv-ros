@@ -1,7 +1,10 @@
 Header  header
-float32 latitude
-float32 longitude
-float32 psi
-float32 psidot
+float32 lat
+float32 long
+float32 yawangle
+float32 yawrate
 float32 ax
 float32 ay
+float32 altitude
+float32 vx
+float32 vy

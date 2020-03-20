@@ -11,8 +11,8 @@ public:
     };
 
     void cmdCallback(const geometry_msgs::Twist::ConstPtr& cmd){
-        opendlv_cmd_.delta_req = cmd->angular.z;
-        opendlv_cmd_.ax_req = cmd->linear.x;
+        opendlv_cmd_.steering = cmd->angular.z;
+        opendlv_cmd_.acceleration = cmd->linear.x;
         pub_.publish(opendlv_cmd_);
     };
    
