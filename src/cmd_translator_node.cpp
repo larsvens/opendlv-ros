@@ -1,5 +1,4 @@
 #include "ros/ros.h"
-#include "geometry_msgs/Twist.h"
 #include "opendlv_ros/ActuationRequest.h"
 
 class CmdTranslator{
@@ -7,12 +6,12 @@ public:
     CmdTranslator() 
     {
         pub_ = nh_.advertise<opendlv_ros::ActuationRequest>("/lars/ActuationRequest", 1);
-        sub_ = nh_.subscribe("cmd_vel", 1, &CmdTranslator::cmdCallback, this);
+        sub_ = nh_.subscribe("/OpenDLV/ActuationRequest", 1, &CmdTranslator::cmdCallback, this);
     };
 
-    void cmdCallback(const geometry_msgs::Twist::ConstPtr& cmd){
-        opendlv_cmd_.steering = cmd->angular.z;
-        opendlv_cmd_.acceleration = cmd->linear.x;
+    void cmdCallback(const opendlv_ros::ActuationRequest::ConstPtr& opendlv_cmd){
+        opendlv_cmd_.steering = opendlv_cmd->steering;
+        opendlv_cmd_.acceleration = opendlv_cmd->acceleration;
         pub_.publish(opendlv_cmd_);
     };
    
