@@ -10,7 +10,8 @@ public:
     };
 
     void cmdCallback(const opendlv_ros::ActuationRequest::ConstPtr& opendlv_cmd){
-        opendlv_cmd_.steering = opendlv_cmd->steering;
+	opendlv_cmd_.header.stamp = opendlv_cmd->header.stamp;        
+	opendlv_cmd_.steering = opendlv_cmd->steering;
         opendlv_cmd_.acceleration = opendlv_cmd->acceleration;
         pub_.publish(opendlv_cmd_);
     };

@@ -23,10 +23,10 @@ class CtrlInterface:
         while not rospy.is_shutdown(): 
             self.odlv_cmd.steering = self.cmd_vel.angular.z
             if(self.cmd_vel.linear.x >= 0):
-                cmd_vel_linear_x_max = 2.0
-                self.odlv_cmd.acceleration = (100.0/cmd_vel_linear_x_max)*self.cmd_vel.linear.x
+                self.odlv_cmd.acceleration = 10.0*self.cmd_vel.linear.x # 0 to 30% throttle_req
             else:    
-                self.odlv_cmd.acceleration = self.cmd_vel.linear.x
+                self.odlv_cmd.acceleration = self.cmd_vel.linear.x      # 0 to -3.0m/s^2 brake_req
+            self.odlv_cmd.header.stamp = rospy.Time.now()
             self.odlv_cmd_pub.publish(self.odlv_cmd)
             self.rate.sleep()
 

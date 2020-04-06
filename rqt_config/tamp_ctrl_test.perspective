@@ -37,7 +37,7 @@
                 },
                 "vx_min": {
                   "type": "repr",
-                  "repr": "-2.0"
+                  "repr": "-3.000000000000001"
                 },
                 "vw_min": {
                   "type": "repr",
@@ -49,7 +49,7 @@
                 },
                 "vx_max": {
                   "type": "repr",
-                  "repr": "2.0"
+                  "repr": "3.000000000000001"
                 }
               },
               "groups": {}
@@ -292,8 +292,8 @@
       "keys": {
         "geometry": {
           "type": "repr(QByteArray.hex)",
-          "repr(QByteArray.hex)": "QtCore.QByteArray('01d9d0cb00020000000008140000021f00000ccc000005e4000008140000025000000ccc000005e400000000000000000f00')",
-          "pretty-print": "               P         "
+          "repr(QByteArray.hex)": "QtCore.QByteArray('01d9d0cb00020000000007b50000022c00000c6d000005f1000007b50000025d00000c6d000005f100000000000000000f00')",
+          "pretty-print": "       , m     ] m       "
         },
         "state": {
           "type": "repr(QByteArray.hex)",
