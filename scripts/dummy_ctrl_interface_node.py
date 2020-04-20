@@ -18,8 +18,16 @@ class CtrlInterface:
         self.rate = rospy.Rate(100)
         self.cmd_vel = Twist()
         self.odlv_cmd = ActuationRequest()    
-
-        # loop
+        
+        # uncomment to send nonzero values for first 5 seconds
+        for i in range(500):
+            self.odlv_cmd.acceleration = 20
+            self.odlv_cmd.steering = 0.1           
+            self.odlv_cmd.header.stamp = rospy.Time.now()
+            self.odlv_cmd_pub.publish(self.odlv_cmd)
+            self.rate.sleep()               
+        
+        # main loop
         while not rospy.is_shutdown(): 
             self.odlv_cmd.steering = self.cmd_vel.angular.z
             if(self.cmd_vel.linear.x >= 0):
